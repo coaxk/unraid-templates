@@ -1,35 +1,39 @@
 # unraid-templates
 
-Unraid Community Applications (CA) templates for **subarr** (and, later,
-`subarr-subgen`).
+Unraid Community Applications templates for
+[subarr](https://github.com/coaxk/subarr).
 
-- `templates/subarr.xml` — the CA container template for
-  [subarr](https://github.com/coaxk/subarr).
-- `images/subarr-icon.png` — the app icon CA displays (512x512).
+- `templates/subarr.xml` — the CA container template for subarr.
+- `images/subarr-icon.png` — the app icon.
 
-## Status: staged, not yet announced
+## What is subarr?
 
-The template is ready. Before submitting to Community Applications, two things
-still need doing (the actual "deploy" step):
+The coordination layer for the *arr subtitle stack. It stands beside Bazarr,
+never instead of it: Bazarr finds and downloads, subgen transcribes, and subarr
+decides what subtitles are actually missing across Sonarr, Radarr and Bazarr,
+verifies the spoken audio language by ear, and coordinates the work. Full
+details in the [subarr repo](https://github.com/coaxk/subarr).
 
-1. **Create an Unraid forum support thread** for subarr (Docker Containers
-   board) and set `<Support>` in `subarr.xml` to its URL. Right now `<Support>`
-   points at the GitHub issues page as an interim; CA expects a forum thread.
-2. **Announce this repo** in the Unraid forums "All Unraid Application Template
-   Repositories / Support Threads" thread so the CA app feed picks it up.
+## Installing on Unraid
 
-## Decisions baked in
+Search "subarr" in the **Apps** tab once it is live in Community Applications.
 
-- **DB lives in `/config`** (`SUBARR_DB_PATH=/config/subarr.db`), the Unraid
-  appdata convention. The subarr image default is `/data`; it is env-driven, so
-  the template overrides it to `/config`.
-- **No GPU** in the template. subarr is CPU-only; the GPU work is subgen's. A
-  future `subarr-subgen.xml` will carry the nvidia runtime config.
-- **PUID 99 / PGID 100** (Unraid `nobody:users`).
-- All integrations (Bazarr/Sonarr/Radarr/Tautulli/Plex/Ollama) are optional and
-  masked; the first-run onboarding wizard auto-detects them.
+To add it manually: **Docker → Add Container → Template repositories**, add
+`https://github.com/coaxk/unraid-templates`, then **Add Container** and choose
+subarr from the template dropdown.
 
-## Testing the template locally
+## Template notes
 
-On an Unraid box: **Docker → Add Container → Template repositories**, add this
-repo's URL, then **Add Container → Template dropdown → subarr**.
+- subarr is CPU-only; no GPU is required (transcription is subgen's job).
+- The SQLite database and persisted settings live in the Config (`/config`)
+  appdata share.
+- Integrations (Bazarr, Sonarr, Radarr, Tautulli, Plex, Ollama) are optional;
+  the first-run onboarding wizard auto-detects them on your Docker network, and
+  manual entry is available at every step.
+- subarr needs a subgen container for transcription
+  (`ghcr.io/coaxk/subarr-subgen` recommended; vanilla mccloudS/subgen works in
+  compatibility mode).
+
+## License
+
+MIT. See [LICENSE](LICENSE).
