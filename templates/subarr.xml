@@ -6,7 +6,7 @@
   <Registry>https://github.com/coaxk/subarr/pkgs/container/subarr</Registry>
   <Network>bridge</Network>
   <Privileged>false</Privileged>
-  <Support>https://github.com/coaxk/subarr/issues</Support>
+  <Support>https://forums.unraid.net/topic/199311-support-subarr-the-gui-bazaar-wishes-it-had-and-the-one-subgen-never-has-had/</Support>
   <Project>https://github.com/coaxk/subarr</Project>
   <Overview>The coordination layer for the *arr subtitle stack. Subarr stands beside Bazarr, never instead of it: Bazarr finds and downloads, subgen transcribes, and subarr coordinates. It decides what subtitles are actually missing across Sonarr/Radarr/Bazarr per language, keeps a provenance ledger, schedules Whisper walks with backpressure, and verifies the spoken audio language by ear (it tells a mislabeled track from a bilingual one from "genuinely unsure", with one-click fixes that flow back into coverage). A built-in Tuning Lab finds the Whisper settings that win on your hardware.
 
