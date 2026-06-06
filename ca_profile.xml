@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <CommunityApplications>
-  <Profile>subarr is the coordination layer for the *arr subtitle stack. It stands beside Bazarr, never instead of it: Bazarr finds and downloads, subgen transcribes, and subarr decides what subtitles are actually missing across Sonarr, Radarr and Bazarr, verifies the spoken audio language by ear, and coordinates the work. This repository hosts the Unraid Community Applications template for subarr.</Profile>
+  <Profile>subarr is the GUI Bazarr wishes it had and the one that Subgen never had, it's the coordination layer for the *arr subtitle stack. It stands beside Bazarr, never instead of it: Bazarr finds and downloads, subgen transcribes, and subarr decides what subtitles are actually missing across Sonarr, Radarr and Bazarr, verifies the spoken audio language by ear, and coordinates the work. This repository hosts the Unraid Community Applications template for subarr.</Profile>
   <Icon>https://raw.githubusercontent.com/coaxk/unraid-templates/main/images/subarr-icon.png</Icon>
   <WebPage>https://github.com/coaxk/subarr</WebPage>
   <Forum>https://github.com/coaxk/subarr/issues</Forum>
